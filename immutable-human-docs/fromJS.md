@@ -1,6 +1,9 @@
 # Human Docs
-## `fromJS()`
-Converts plain JS[objects](BASIC JS DOCS) and/or [arrays](BASIC JS DOCS) to Immutable [Maps](IMMUTABLE MAPS) and [Lists](IMMUTABLE LISTS).
+## fromJS()
+`Immutable.fromJS(ObjOrArrayToConvert)`
+Converts plain JS[objects](BASIC JS DOCS) and/or [arrays](BASIC JS DOCS) to Immutable [Maps](IMMUTABLE MAPS) and [Lists](IMMUTABLE LISTS). 
+
+`fromJS()` [deeply](RECURSION CONCEPT) converts objects and arrays, meaning that if your object or array contains more objects or arrays, it will convert those (and any further objects and arrays in them) as well.
 
 ```js
 // Basic Usage, ES5
@@ -10,11 +13,11 @@ var myMutableObject = {
     exampleIntegerArray: [1, 2, 3, 4],
     exampleBoolean: true,
 }
-var myImmutableObject = Immutable.fromJS(muMutableObject)
+var myImmutableObject = Immutable.fromJS(myMutableObject)
 
 // Proof - String
 var stringExampleValue = myImmutableObject.get('exampleString')
-console.log(getString) // returns "I'm a string!"
+console.log(stringExampleValue) // returns "I'm a string!"
 
 // Proof - Array
 var arrayExample = myImmutableObject.get('exampleStringArray')
@@ -37,7 +40,14 @@ getBooleanValueExample(exampleBooleanValue)// returns true
 
 ```
 
-# Original Docs
+It also performs a conservative conversion, meaning that Immutable will test whatever you perform `fromJS()` on and make sure its [type](CONCEPT TYPES) is explicitly an array or object. If what you're converting is not an array or object, `fromJS()` will do nothing to it, and work around the value.
+
+```js
+EXAMPLE OF CONSERVATIVE CONVERSION GOES HERE
+```
+
+
+# Original Docs (2015.07.14)
 ## `fromJS()`
 Deeply converts plain JS objects and arrays to Immutable Maps and Lists.
 `fromJS(json: any, reviver?: (k: any, v: Iterable<any, any>) => any): any`
