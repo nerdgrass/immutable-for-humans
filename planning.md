@@ -11,7 +11,7 @@ Thankfully, I had some very friendly and patient coworkers who put up with an ar
 Not everybody has awesome coworkers willing to teach them the dark arts of mixing FP and JS. So, I'm going to attempt to inscribe my learnings and organize them in such a way that anybody that writes Javascript finds Immutable.js and its associated concepts approachable. I'll probably screw this up, so I'm making this open source. If all goes well, maybe somebody somewhere will find this useful.
 
 ## Structure
-- **Layman's Docs**
+- **Human Docs**
   * Code Documentation
     * An exact copy of the Immutable.js docs, but with explanations in layman's terms.
     * Code is written in ES5, ES6, and ES7. Switch between (IE: react-dnd docs)
